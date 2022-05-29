@@ -37,14 +37,30 @@ airplay_sources = [
   'src/gstairplaysrc.c'
   ]
 
+
+
 # RPiPlay airplay library
 cmake = import('cmake')
 opt_var = cmake.subproject_options()
 opt_var.set_install(false)
 libairplay = cmake.subproject('airplay',  options: opt_var)
-libdns_sd_dep = dependency('avahi-compat-libdns_sd', required: true)
+
+#cryo_dep = libairplay.dependency('libcryo')
+#,
+#    link_args : '-L /opt/homebrew/Cellar/openssl@1.1/1.1.1n/lib')
+
+#cryo_lib_dir = '/opt/homebrew/Cellar/openssl@1.1/1.1.1n/lib'
+
+cryo_dep = cc.find_library('libcrypto', dirs: '/opt/homebrew/Cellar/openssl@1.1/1.1.1n/lib', required: true)
+
+#cryo_dep = declare_dependency(
+#    link_args : ['-L' + cryo_lib_dir, '-l' + 'crypto'])
+
+
+#libdns_sd_dep = dependency('avahi-compat-libdns_sd', required: true)
 libairplay_dep = libairplay.dependency('airplay')
 llhttp_dep = libairplay.dependency('llhttp')
+#plist_dep = libairplay.dependency('libplist')
 thread_dep = dependency('threads')
 m_dep = cc.find_library('m', required: true)
 playfair_dep = libairplay.dependency('playfair')
@@ -52,7 +68,7 @@ playfair_dep = libairplay.dependency('playfair')
 gstairplay = library('gstairplay',
   airplay_sources,
   c_args: plugin_c_args,
-  dependencies : [gstbase_dep, gstvideo_dep, libdns_sd_dep, libairplay_dep, llhttp_dep, thread_dep, m_dep, playfair_dep, gio_dep],
+  dependencies : [cryo_dep, gstbase_dep, gstvideo_dep, libairplay_dep, llhttp_dep, thread_dep, m_dep, playfair_dep, gio_dep],
   install : true,
   install_dir : plugins_install_dir,
 )
