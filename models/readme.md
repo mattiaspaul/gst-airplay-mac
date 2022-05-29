@@ -21,6 +21,7 @@ model.eval()
 print('done')
 script = torch.jit.trace(model,torch.zeros(1,1,256,256))
 torch.jit.save(script,'nnunet_helen_fast.pth')
+```
 
 for the streamlit demo the scripted version (pytorch jit) is already available, for best performance on Apple Silicon (M1) we convert it again to a coreml model on the fly
 ```
