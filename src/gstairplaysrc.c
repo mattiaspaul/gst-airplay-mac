@@ -60,9 +60,10 @@ G_DEFINE_TYPE_WITH_CODE (GstAirPlaySrc, gst_airplay_src,
     GST_TYPE_PUSH_SRC,
     GST_DEBUG_CATEGORY_INIT (GST_CAT_DEFAULT, "airplaysrc", 0, "AirPlay Source"));
 
-static void audio_process(void *cls, raop_ntp_t *ntp, aac_decode_struct *data)
-{
+static void audio_process(void *cls){
 }
+
+//, raop_ntp_t *ntp, aac_decode_struct *data)
 
 static void video_process(void *cls, raop_ntp_t *ntp, h264_decode_struct *data) {
   GstAirPlaySrc *self = GST_AIRPLAY_SRC (cls);
