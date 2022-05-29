@@ -2,6 +2,10 @@ A GStreamer plugin that provides an `airplaysrc` element for receiving video
 streamed from Apple devices using the AirPlay protocol. Audio is currently not
 supported.
 
+## Edit by mattiaspaul
+
+minor modifications to enable the usage of this gstreamer plugin on MacOS. In contrast to UxPlay this enables a more flexible integration as python plugin, e.g. to run deep networks on screenshare videos in Streamlit.
+
 Here's a screenshot showing the iPad screen in OBS Studio:
 
 ![iPad screen in OBS Studio](doc/obs-ipad.png)
