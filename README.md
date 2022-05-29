@@ -48,6 +48,7 @@ Among others this installs streamlit, so the first thing you can try out is runn
 ```
 streamlit run hello.py
 ```
+![screenshot](https://github.com/mattiaspaul/gst-airplay-mac/blob/[branch]/image.jpg?raw=true)
 
 ## Credits
 
