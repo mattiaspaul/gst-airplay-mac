@@ -7,3 +7,4 @@ a modified nnUNet (see below) network was trained with the Helen Star* Face data
 to use, simply copy the file into nnUNetTrainerV2_123.py
 pyair/lib/python3.9/site-packages/nnunet/training/network_training/nnUNet_variants/architectural_variants/
 
+<img alt="labelled examples" src="../examples/helenface.jpg" width="80%">
