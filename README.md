@@ -48,10 +48,9 @@ Among others this installs streamlit, so the first thing you can try out is runn
 ```
 streamlit run hello.py
 ```
-![screenshot](https://github.com/mattiaspaul/gst-airplay-mac/blob/[branch]/image.jpg?raw=true)
+<img alt="screenshot" src="examples/gstairplaymac_screenshot.png" width="30%">
 
 ## Credits
-
 
 The pluging code is based on
 [gst-airplay](https://github.com/knuesel/gst-airplay) with minor modifications and
