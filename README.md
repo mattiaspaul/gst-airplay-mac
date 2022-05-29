@@ -50,6 +50,17 @@ streamlit run hello.py
 ```
 <img alt="screenshot" src="examples/gstairplaymac_screenshot.png" width="30%">
 
+## AirNet Face Segmentation Demo
+To better show-case the ability of the airplay gstream plugin together with streamlit, I have created a deep learning based segmentation model (see models folder for details) that uses GPU accelarated inference on Apple's M1. Simply run
+```
+streamlit run app.py
+```
+
+When your iOS devices shows a face image inside the blue box all visible face parts will be automatically segmented using a pre-trained UNet (running at 80 fps). If you want you can change the colors that are painted onto the faces. A good example for trying this out is the following gif: https://tenor.com/view/faces-making-funny-famous-celebrities-make-face-gif-15156562
+
+<img alt="screenshot" src="examples/airnet_funnyface_screenshot.png" width="50%">
+
+
 ## Credits
 
 The pluging code is based on
