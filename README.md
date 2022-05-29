@@ -24,6 +24,30 @@ Afterwards you can inspect whether the dynamic library plugin is correctly built
 gst-inspect-1.0 build/libgstairplay.dylib
 ```
 
+You may want to export the PATH of this plugin, e.g. to be used in python (replacing path_to_repo)
+```
+export GST_PLUGIN_PATH_1_0=/opt/homebrew/lib/gstreamer-1.0:/path_to_repo/gst-airplay-mac/build
+```
+
+Next you can test the plugin by calling 
+```
+gst-launch-1.0 airplaysrc ! queue ! h264parse ! decodebin ! videoconvert ! autovideosink
+```
+
+Use any iOS device on the same WiFi network and draw down the control center, where you can select the Screen Share icon. (You might need to go to the Settings > Control Center > More Controls section and tap + by the Screen Sharing option). The default pipeline may run a bit slowly, but don't worry in python everything should be fast.
+
+To run a demo app, it is recommended to create a fresh pip environement (and deactivate current conda envs to avoid conflicts)
+```
+python3 -m venv pyair
+source pyair/bin/activate 
+pip install -r requirements.txt
+cp gst_hacks.py pyair/lib/python3.9/site-packages/gstreamer/
+```
+The last line fixes a different naming convention of the python gstreamer lib so that it points to the homebrew folder and dylib file. 
+Among others this installs streamlit, so the first thing you can try out is running:
+```
+streamlit run hello.py
+```
 
 ## Credits
 
