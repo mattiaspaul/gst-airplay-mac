@@ -58,7 +58,7 @@ streamlit run app.py
 
 When your iOS devices shows a face image inside the blue box all visible face parts will be automatically segmented using a pre-trained UNet (running at 80 fps). If you want you can change the colors that are painted onto the faces. A good example for trying this out is the following gif: https://tenor.com/view/faces-making-funny-famous-celebrities-make-face-gif-15156562
 
-<img alt="screenshot" src="examples/airnet_funny.gif" width="60%">
+<img alt="screenshot" src="examples/airnet_funny.gif">
 
 
 ## Credits
